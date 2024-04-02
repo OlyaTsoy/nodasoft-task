@@ -1,0 +1,154 @@
+body {
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-color: #c0dbd9;
+}
+
+.btn {
+  font-family: inherit;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.header {
+  background-color: #7faff6;
+  padding: 30.5px 30px;
+}
+
+.header__btn {
+  background-color: #a5c7f9;
+}
+
+.main {
+  margin-top: 15px;
+}
+
+.grid {
+  background-color: #b3f95a;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
+  counter-reset: list1;
+}
+
+.grid__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 198px;
+  background-color: #8ad191;
+}
+
+.grid__item::before {
+  counter-increment: list1;
+  content: counter(list1);
+  color: #ffffff;
+  font-size: 53px;
+}
+
+.grid__item--first {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.grid__item--second {
+  grid-column: 3 / 6;
+  grid-row: 1;
+}
+
+.grid__item--third {
+  grid-column: 6;
+  grid-row: 1;
+}
+
+.grid__item--fourth {
+  grid-column: 1 / 6;
+  grid-row: 2;
+}
+
+.grid__item--fifth {
+  grid-column: 6;
+  grid-row: 2;
+}
+
+.flex {
+  display: flex;
+  column-gap: 30px;
+  margin-top: 15px;
+  padding: 30px;
+  background-color: #88b5bf;
+  list-style-type: none;
+}
+
+.flex__item {
+  background-color: #0d89b0;
+  width: 255px;
+  height: 199px;
+}
+
+.footer {
+  background-color: #7faff6;
+  height: 100px;
+  margin-top: 100px;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all ease .3s;
+}
+
+.popup__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  padding: 15px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.popup:target {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.popup__title {
+  color: #000000;
+  font-size: 53px;
+}
+
+.popup__closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #7faff6;
+}
